@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2f7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .inline {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .group {
+      margin-top: 15px;
+    }
+
+    button {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1a252f;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+
+```
+<h1 id="title">User Experience Survey</h1>
+<p id="description">Help us improve by answering a few quick questions.</p>
+
+<form id="survey-form">
+
+  <!-- Name -->
+  <label id="name-label" for="name">Name</label>
+  <input 
+    id="name" 
+    type="text" 
+    placeholder="Enter your name" 
+    required
+  />
+
+  <!-- Email -->
+  <label id="email-label" for="email">Email</label>
+  <input 
+    id="email" 
+    type="email" 
+    placeholder="Enter your email" 
+    required
+  />
+
+  <!-- Number -->
+  <label id="number-label" for="number">Age</label>
+  <input 
+    id="number" 
+    type="number" 
+    placeholder="Enter your age" 
+    min="10" 
+    max="100"
+  />
+
+  <!-- Dropdown -->
+  <label for="dropdown">How did you find us?</label>
+  <select id="dropdown">
+    <option value="internet">Internet</option>
+    <option value="friend">Friend</option>
+  </select>
+
+  <!-- Radio Buttons -->
+  <div class="group">
+    <p>Would you recommend us?</p>
+    <label>
+      <input type="radio" name="recommend" value="yes" class="inline"> Yes
+    </label>
+    <label>
+      <input type="radio" name="recommend" value="no" class="inline"> No
+    </label>
+  </div>
+
+  <!-- Checkboxes -->
+  <div class="group">
+    <p>What features do you use?</p>
+    <label>
+      <input type="checkbox" value="design" class="inline"> Design
+    </label>
+    <label>
+      <input type="checkbox" value="performance" class="inline"> Performance
+    </label>
+  </div>
+
+  <!-- Textarea -->
+  <label for="comments">Additional Comments</label>
+  <textarea id="comments" rows="4" placeholder="Write your feedback..."></textarea>
+
+  <!-- Submit -->
+  <button id="submit" type="submit">Submit</button>
+
+</form>
+```
+
+  </div>
+</body>
+</html>
