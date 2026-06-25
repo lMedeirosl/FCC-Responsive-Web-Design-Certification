@@ -1,0 +1,62 @@
+/* Body styling */
+body {
+  background-color: #eef2f7; /* not white */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Card container */
+.blog-post-card {
+  background-color: #ffffff; /* white background */
+  width: 320px; /* fixed width */
+  border-radius: 12px; /* rounded corners */
+  text-align: center; /* text alignment */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.post-img {
+  width: 100%; /* fills entire width */
+  display: block;
+  border-bottom: 3px solid #ddd; /* bottom border */
+}
+
+/* Content */
+.post-content {
+  padding: 16px; /* inner spacing */
+}
+
+/* Title */
+.post-title {
+  color: #2c3e50; /* non-default color */
+  margin: 12px; /* margin on all sides */
+}
+
+/* Excerpt */
+.post-excerpt {
+  color: #555; /* non-default color */
+  margin: 12px; /* margin on all sides */
+  font-size: 14px;
+}
+
+/* Button link */
+.read-more {
+  display: inline-block; /* required */
+  color: #ffffff; /* text color */
+  background-color: #3498db; /* background */
+  margin: 12px; /* margin */
+  padding: 10px 16px; /* padding */
+  border-radius: 8px; /* rounded */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.read-more:hover {
+  background-color: #1d6fa5; /* different color on hover */
+}
