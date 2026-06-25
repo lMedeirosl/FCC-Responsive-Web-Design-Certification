@@ -1,0 +1,29 @@
+/* Remove default underline */
+a {
+  text-decoration: none;
+}
+
+/* Unvisited link */
+a:link {
+  color: blue;
+}
+
+/* Visited link */
+a:visited {
+  color: purple;
+}
+
+/* Hover */
+a:hover {
+  color: green;
+}
+
+/* Active (when clicking) */
+a:active {
+  color: red;
+}
+
+/* Focus (keyboard navigation) */
+a:focus {
+  outline: 2px solid orange;
+}
