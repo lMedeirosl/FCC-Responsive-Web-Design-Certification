@@ -1,0 +1,106 @@
+/* Base layout */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+/* 11 + 12: focus (LIST SELECTOR + remove outline) */
+input:focus,
+textarea:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+/* 13: invalid (LIST SELECTOR in correct order) */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: red;
+}
+
+/* 14: valid (LIST SELECTOR in correct order) */
+input:valid,
+select:valid,
+textarea:valid {
+  border-color: green;
+}
+
+/* Radio group */
+.radio-group {
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.radio-group label {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+/* 16,17,18: checked radio styling */
+.radio-group input[type="radio"]:checked {
+  accent-color: #0077ff;
+  box-shadow: 0 0 5px #0077ff;
+}
+
+/* 19: change label text color when selected */
+.radio-group input[type="radio"]:checked + span,
+.radio-group label:has(input[type="radio"]:checked) {
+  color: #0077ff;
+  font-weight: bold;
+}
+
+/* Button hover (15) */
+button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fcc;
+}
+
+/* 20: first-of-type */
+input:first-of-type {
+  border-radius: 20px;
+}
