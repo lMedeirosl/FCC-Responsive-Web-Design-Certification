@@ -1,0 +1,35 @@
+body {
+  background-color: #f4f4f4;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+}
+
+.color1 {
+  background-color: #ff5733;
+}
+
+.color2 {
+  background-color: rgb(50, 150, 255);
+}
+
+.color3 {
+  background-color: green;
+}
+
+.color4 {
+  background-color: hsl(280, 70%, 50%);
+}
+
+.color5 {
+  background-color: orange;
+}
