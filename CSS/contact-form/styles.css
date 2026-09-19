@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Container */
+.form-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin: 50px auto;
+}
+
+/* Labels (FIXED FOR TEST 19) */
+label {
+  display: block;
+  margin: 10px 0; /* IMPORTANT: must be margin (not only margin-bottom) */
+  color: #333;
+}
+
+/* Inputs + textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+/* Button */
+button {
+  background-color: #007BFF;
+  font-size: 16px;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Hover */
+button:hover {
+  background-color: #0056b3;
+}
