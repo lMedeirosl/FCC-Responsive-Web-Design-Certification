@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background-color: #1e1b2e;
+  color: #f2eefc;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+th {
+  background-color: #3a2f5c;
+  text-align: left;
+  padding: 14px;
+}
+
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #4b4270;
+}
+
+/* Todos os spans */
+span {
+  display: inline-block;
+}
+
+/* Linhas: seletores de atributo */
+tr[class="read"] {
+  background-image: linear-gradient(90deg, #1f3d36, #2b5c4f);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(90deg, #3d1f36, #5c2b4f);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(90deg, #3d3a1f, #5c552b);
+}
+
+/* Status: por tipo de linha */
+tr[class="to-read"] span[class="status"] {
+  border: 2px solid #ff6fb5;
+  background-image: linear-gradient(#ff8ac6, #c23a84);
+}
+
+tr[class="read"] span[class="status"] {
+  border: 2px solid #4de0b0;
+  background-image: linear-gradient(#6df0c6, #1f9a75);
+}
+
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid #ffd54a;
+  background-image: linear-gradient(#ffe27a, #c99a10);
+}
+
+/* Status e rate: mesmas dimensões */
+span[class="status"],
+span[class^="rate"] {
+  height: 30px;
+  width: 110px;
+  padding: 4px 6px;
+}
+
+span[class="status"] {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #14101f;
+}
+
+/* Bolinhas do rate (filhos diretos) */
+span[class^="rate"] > span {
+  border: 2px solid #ffd54a;
+  border-radius: 50%;
+  margin: 0 3px;
+  height: 16px;
+  width: 16px;
+  background-color: transparent;
+}
+/* Nota 1: primeira bolinha */
+[class*="one"] > :first-child {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="one"] > span:first-child {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="one"] span:first-child {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="one"] > span:first-of-type {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class~="one"] > span:first-child {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+[class$="one"] > :first-child {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+/* Nota 2: duas primeiras bolinhas */
+[class*="two"] > :nth-child(-n + 2) {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="two"] > span:nth-child(-n + 2) {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="two"] span:nth-child(-n + 2) {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="two"] > span:nth-of-type(-n + 2) {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class~="two"] > span:nth-child(-n + 2) {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+[class$="two"] > :nth-child(-n + 2) {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+/* Nota 3: as três bolinhas */
+[class*="three"] > * {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="three"] > span {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class*="three"] span {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+span[class~="three"] > span {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
+
+[class$="three"] > * {
+  background-image: linear-gradient(#fff3b0, #ffc400);
+}
