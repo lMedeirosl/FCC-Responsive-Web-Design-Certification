@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de projetos desenvolvidos durante a certificação Responsive Web Design do freeCodeCamp por Vinicius De Medeiros Ellena (lMedeirosl).">
+  <title>Responsive Web Design Certification | Portfólio freeCodeCamp — lMedeirosl</title>
+  <style>
+    :root {
+      --bg-primary: #0a0a16;
+      --bg-secondary: #111226;
+      --bg-card: #171932;
+      --bg-card-hover: #1e2142;
+      --bg-glass: rgba(17, 18, 38, 0.85);
+      --text-primary: #f5f6f7;
+      --text-secondary: #b8bcc8;
+      --text-muted: #858b9e;
+      --accent-fcc: #ffbf00;
+      --accent-fcc-hover: #ffd44d;
+      --accent-html: #f97316;
+      --accent-html-soft: rgba(249, 115, 22, 0.14);
+      --accent-css: #38bdf8;
+      --accent-css-soft: rgba(56, 189, 248, 0.14);
+      --accent-cert: #10b981;
+      --accent-cert-soft: rgba(16, 185, 129, 0.14);
+      --border-color: rgba(255, 255, 255, 0.09);
+      --border-hover: rgba(255, 191, 0, 0.45);
+      --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      --shadow-card: 0 8px 24px -6px rgba(0, 0, 0, 0.4);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --max-width: 1240px;
+      --transition: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: var(--bg-primary);
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(255, 191, 0, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(249, 115, 22, 0.06) 0%, transparent 45%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.75rem 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-sm);
+      background: var(--accent-fcc);
+      color: #0a0a23;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-primary);
+    }
+
+    .main-nav .nav-cta {
+      background: rgba(255, 191, 0, 0.14);
+      color: var(--accent-fcc);
+      border: 1px solid rgba(255, 191, 0, 0.3);
+      font-weight: 600;
+    }
+
+    .main-nav .nav-cta:hover,
+    .main-nav .nav-cta:focus-visible {
+      background: var(--accent-fcc);
+      color: #0a0a23;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 191, 0, 0.12);
+      border: 1px solid rgba(255, 191, 0, 0.3);
+      color: var(--accent-fcc);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.15rem;
+      font-weight: 800;
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, #ffbf00, #38bdf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-description {
+      font-size: 1.06rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.75rem;
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.75rem 1.3rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent-fcc);
+      color: #0a0a23;
+      box-shadow: 0 8px 20px -6px rgba(255, 191, 0, 0.45);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--accent-fcc-hover);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+    }
+
+    .stat-value {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Hero Preview Card */
+    .hero-showcase {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-showcase figure {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: #0a0a23;
+    }
+
+    .hero-showcase figcaption {
+      margin-top: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-showcase figcaption a {
+      color: var(--accent-fcc);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero-showcase figcaption a:hover {
+      text-decoration: underline;
+    }
+
+    /* Category Quick Nav Bar */
+    .category-switcher {
+      padding: 2.25rem 0 0.5rem;
+    }
+
+    .switcher-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+    }
+
+    .switcher-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .switcher-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .pill-link:hover,
+    .pill-link:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .pill-html {
+      color: var(--accent-html);
+      border-color: rgba(249, 115, 22, 0.3);
+      background: var(--accent-html-soft);
+    }
+
+    .pill-html:hover {
+      border-color: var(--accent-html);
+    }
+
+    .pill-css {
+      color: var(--accent-css);
+      border-color: rgba(56, 189, 248, 0.3);
+      background: var(--accent-css-soft);
+    }
+
+    .pill-css:hover {
+      border-color: var(--accent-css);
+    }
+
+    .pill-cert {
+      color: var(--accent-cert);
+      border-color: rgba(16, 185, 129, 0.3);
+      background: var(--accent-cert-soft);
+    }
+
+    .pill-cert:hover {
+      border-color: var(--accent-cert);
+    }
+
+    .pill-count {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      color: var(--text-primary);
+    }
+
+    /* Project Sections */
+    .projects-section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: fit-content;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .badge-html {
+      background: var(--accent-html-soft);
+      color: var(--accent-html);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+
+    .badge-css {
+      background: var(--accent-css-soft);
+      color: var(--accent-css);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .badge-cert {
+      background: var(--accent-cert-soft);
+      color: var(--accent-cert);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.15rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      opacity: 0.75;
+      transition: opacity var(--transition);
+    }
+
+    .card-html::before {
+      background: linear-gradient(90deg, #f97316, #fb923c);
+    }
+
+    .card-css::before {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+    }
+
+    .project-card:hover,
+    .project-card:focus-within {
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .card-number {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-html {
+      background: var(--accent-html-soft);
+      color: var(--accent-html);
+    }
+
+    .tag-css {
+      background: var(--accent-css-soft);
+      color: var(--accent-css);
+    }
+
+    .card-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+      line-height: 1.35;
+    }
+
+    .card-folder {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      word-break: break-all;
+      margin-bottom: 0.65rem;
+    }
+
+    .card-desc {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .card-footer {
+      padding: 0.85rem 1.25rem;
+      border-top: 1px solid var(--border-color);
+      background: rgba(0, 0, 0, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent-fcc);
+      transition: color var(--transition);
+    }
+
+    .card-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .card-link:hover,
+    .card-link:focus-visible {
+      color: var(--accent-fcc-hover);
+    }
+
+    .card-arrow {
+      display: inline-flex;
+      align-items: center;
+      transition: transform var(--transition);
+    }
+
+    .project-card:hover .card-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Certificate Section */
+    .certificate-section {
+      padding: 3.5rem 0 4rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .certificate-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .certificate-preview {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+    }
+
+    .certificate-info h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .certificate-info p {
+      color: var(--text-secondary);
+      font-size: 0.96rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cert-meta {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      font-size: 0.88rem;
+    }
+
+    .cert-meta li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cert-meta strong {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .cert-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: auto;
+      background: #070710;
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-fcc);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .certificate-card {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .main-nav {
+        width: 100%;
+      }
+
+      .main-nav ul {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding: 2.75rem 0 2.25rem;
+      }
+
+      .certificate-card {
+        padding: 1.25rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho e Navegação -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#topo" class="brand" aria-label="Início do Portfólio">
+        <span class="brand-badge">(&#x1F525;) fCC</span>
+        <div class="brand-text">
+          Responsive Web Design
+          <span>Portfólio por lMedeirosl</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#topo">Apresentação</a></li>
+          <li><a href="#html5">HTML5 (24)</a></li>
+          <li><a href="#css">CSS (39)</a></li>
+          <li><a href="#certificado">Certificado</a></li>
+          <li>
+            <a href="https://github.com/lMedeirosl/FCC-Responsive-Web-Design-Certification" class="nav-cta" target="_blank" rel="noopener noreferrer">
+              Repositório GitHub &#8599;
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="topo">
+    <!-- Seção Inicial de Apresentação -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">freeCodeCamp.org &bull; Responsive Web Design Certification</span>
+          <h1 id="hero-title">
+            Catálogo de Projetos <span class="highlight">Responsive Web Design</span>
+          </h1>
+          <p class="hero-description">
+            Este repositório reúne todos os laboratórios, exercícios práticos e projetos desenvolvidos durante o curso
+            <strong>Responsive Web Design</strong> da instituição <strong>freeCodeCamp</strong>. O objetivo deste portfólio é apresentar
+            de forma organizada minha experiência prática em semântica HTML5, acessibilidade web, layouts modernos com CSS3
+            (Flexbox e Grid), animações e design responsivo.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#html5" class="btn btn-primary">Explorar Projetos HTML5</a>
+            <a href="#css" class="btn btn-secondary">Explorar Projetos CSS</a>
+            <a href="./medias/certificado.png" class="btn btn-secondary" target="_blank" rel="noopener">Ver Certificado</a>
+            <a href="https://github.com/lMedeirosl/FCC-Responsive-Web-Design-Certification" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              GitHub (lMedeirosl)
+            </a>
+          </div>
+
+          <div class="stats-bar" aria-label="Resumo do curso">
+            <div class="stat-item">
+              <span class="stat-value">63</span>
+              <span class="stat-label">Projetos no Catálogo</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">24</span>
+              <span class="stat-label">Projetos HTML5</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">39</span>
+              <span class="stat-label">Projetos CSS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">~300h</span>
+              <span class="stat-label">Carga Horária fCC</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-showcase" aria-label="Certificado de conclusão freeCodeCamp">
+          <figure>
+            <a href="./medias/certificado.png" target="_blank" rel="noopener" title="Abrir imagem do certificado em tamanho original">
+              <img src="./medias/certificado.png" alt="Certificado Responsive Web Design do freeCodeCamp concedido a Vinicius De Medeiros Ellena" width="900" height="600">
+            </a>
+            <figcaption>
+              <span>Certificação oficial concluída no <strong>freeCodeCamp</strong></span>
+              <a href="#certificado">Detalhes da certificação &rarr;</a>
+            </figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Barra de Navegação entre Categorias -->
+    <nav class="category-switcher" aria-label="Navegação rápida entre categorias">
+      <div class="container">
+        <div class="switcher-box">
+          <span class="switcher-title">Navegar por categoria:</span>
+          <div class="switcher-links">
+            <a href="#html5" class="pill-link pill-html">
+              <span>Projetos HTML5</span>
+              <span class="pill-count">24 projetos</span>
+            </a>
+            <a href="#css" class="pill-link pill-css">
+              <span>Projetos CSS</span>
+              <span class="pill-count">39 projetos</span>
+            </a>
+            <a href="#certificado" class="pill-link pill-cert">
+              <span>Certificado &amp; Progresso</span>
+              <span class="pill-count">Verificação</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Seção: Projetos HTML5 -->
+    <section id="html5" class="projects-section" aria-labelledby="title-html5">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <span class="section-badge badge-html">Categoria 01 &bull; HTML5</span>
+            <h2 id="title-html5" class="section-title">Projetos de HTML5</h2>
+            <p class="section-subtitle">
+              Estruturação semântica, formulários acessíveis, tabelas de dados, multimídia nativa e boas práticas de marcação.
+            </p>
+          </div>
+          <a href="#css" class="btn btn-secondary">Ir para CSS &darr;</a>
+        </div>
+
+        <div class="projects-grid">
+          <!-- 1 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #01</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Accessible Audio Controller</h3>
+              <p class="card-folder">./HTML5/accessible-audio-controller/</p>
+              <p class="card-desc">Interface de controle de áudio focada em semântica e recursos de acessibilidade.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/accessible-audio-controller/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #02</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Basic list</h3>
+              <p class="card-folder">./HTML5/Basic list/</p>
+              <p class="card-desc">Lista descritiva de navegadores web utilizando elementos semânticos de listagem.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/Basic%20list/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #03</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Book Catalog Table</h3>
+              <p class="card-folder">./HTML5/book-catalog-table/</p>
+              <p class="card-desc">Catálogo de livros estruturado com tabelas semânticas, cabeçalhos e rodapé tabular.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/book-catalog-table/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #04</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Bookstore Page</h3>
+              <p class="card-folder">./HTML5/bookstore-page/</p>
+              <p class="card-desc">Página de livraria demonstrando hierarquia de títulos, seções e navegação semântica.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/bookstore-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #05</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Cat Blog Page</h3>
+              <p class="card-folder">./HTML5/cat-blog-page/</p>
+              <p class="card-desc">Blog do Mr. Whiskers construído com artigos, seções e navegação interna em HTML5.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/cat-blog-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #06</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Cat Site (CatPhotoApp)</h3>
+              <p class="card-folder">./HTML5/cat-site/</p>
+              <p class="card-desc">Aplicação clássica CatPhotoApp com imagens, figuras, listas e formulário interativo.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/cat-site/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #07</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Checkout Page</h3>
+              <p class="card-folder">./HTML5/checkout-page/</p>
+              <p class="card-desc">Página de finalização de compra com campos de formulário acessíveis e validação HTML.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/checkout-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #08</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Debug Donation Form</h3>
+              <p class="card-folder">./HTML5/debug-donation-form/</p>
+              <p class="card-desc">Formulário de doação depurado com associação correta de rótulos e controles de entrada.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/debug-donation-form/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #09</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Debug Journey Blog</h3>
+              <p class="card-folder">./HTML5/debug-journey-blog/</p>
+              <p class="card-desc">Blog do Camperbot com estrutura semântica e navegação revisada para leitores de tela.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/debug-journey-blog/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #10</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Event Hub</h3>
+              <p class="card-folder">./HTML5/event-hub/</p>
+              <p class="card-desc">Central de eventos estruturada com seções de próximos eventos e eventos passados.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/event-hub/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #11</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Experience Survey</h3>
+              <p class="card-folder">./HTML5/experience-survey/</p>
+              <p class="card-desc">Formulário de pesquisa de experiência completo com múltiplos tipos de inputs e agrupamentos.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/experience-survey/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #12</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">FCC HTML Video</h3>
+              <p class="card-folder">./HTML5/fcc-html-video/</p>
+              <p class="card-desc">Demonstração prática do elemento de vídeo nativo do HTML5 e seus atributos de reprodução.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/fcc-html-video/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 13 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #13</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Final Exam Table</h3>
+              <p class="card-folder">./HTML5/final-exam-table/</p>
+              <p class="card-desc">Tabela de notas de exame final de Cálculo utilizando caption, thead, tbody e tfoot.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/final-exam-table/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 14 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #14</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Heart-icon</h3>
+              <p class="card-folder">./HTML5/Heart-icon/</p>
+              <p class="card-desc">Uso de gráficos vetoriais escaláveis (SVG) inline diretamente na marcação HTML5.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/Heart-icon/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 15 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #15</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Hotel Feedback Form</h3>
+              <p class="card-folder">./HTML5/hotel-feedback-form/</p>
+              <p class="card-desc">Formulário de avaliação de hospedagem utilizando fieldsets, legends, radio buttons e checkboxes.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/hotel-feedback-form/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 16 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #16</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">HTML-audio-and-video-player</h3>
+              <p class="card-folder">./HTML5/HTML-audio-and-video-player/</p>
+              <p class="card-desc">Laboratório combinando reprodutores nativos de áudio e vídeo do HTML5.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/HTML-audio-and-video-player/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 17 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #17</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Job Tips Page</h3>
+              <p class="card-folder">./HTML5/job-tips-page/</p>
+              <p class="card-desc">Página de dicas de carreira para desenvolvedores com citações e blocos semânticos.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/job-tips-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 18 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #18</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Meatloaf-recipe</h3>
+              <p class="card-folder">./HTML5/Meatloaf-recipe/</p>
+              <p class="card-desc">Página de receita culinária estruturada com listas de ingredientes e passo a passo ordenado.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/Meatloaf-recipe/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 19 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #19</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Movie Reviw Page</h3>
+              <p class="card-folder">./HTML5/movie-reviw-page/</p>
+              <p class="card-desc">Página de análise de filme apresentando avaliação acessível, sinopse e elenco.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/movie-reviw-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 20 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #20</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Multimedia Player</h3>
+              <p class="card-folder">./HTML5/multimedia-player/</p>
+              <p class="card-desc">Player multimídia integrando faixas de áudio, vídeo e legendas acessíveis.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/multimedia-player/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 21 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #21</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Tech Schedule</h3>
+              <p class="card-folder">./HTML5/tech-schedule/</p>
+              <p class="card-desc">Cronograma de conferência de tecnologia construído com células mescladas e escopos de tabela.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/tech-schedule/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 22 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #22</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Travel Agency</h3>
+              <p class="card-folder">./HTML5/travel-agency/</p>
+              <p class="card-desc">Página de agência de viagens apresentando pacotes turísticos, figuras e roteiros.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/travel-agency/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 23 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #23</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Video Compilation Page</h3>
+              <p class="card-folder">./HTML5/video-compilation-page/</p>
+              <p class="card-desc">Página curada com compilação de vídeos incorporados em seções temáticas.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/video-compilation-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 24 -->
+          <article class="project-card card-html">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">HTML #24</span>
+                <span class="card-tag tag-html">HTML5</span>
+              </div>
+              <h3 class="card-title">Video Display Iframe</h3>
+              <p class="card-folder">./HTML5/video-display-iframe/</p>
+              <p class="card-desc">Incorporação segura e semântica de vídeos externos utilizando o elemento iframe.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./HTML5/video-display-iframe/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Projetos CSS -->
+    <section id="css" class="projects-section" aria-labelledby="title-css">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <span class="section-badge badge-css">Categoria 02 &bull; CSS3</span>
+            <h2 id="title-css" class="section-title">Projetos de CSS</h2>
+            <p class="section-subtitle">
+              Estilização avançada, Flexbox, CSS Grid, tipografia, variáveis CSS, ilustrações em CSS puro, animações e responsividade.
+            </p>
+          </div>
+          <a href="#html5" class="btn btn-secondary">Voltar para HTML5 &uarr;</a>
+        </div>
+
+        <div class="projects-grid">
+          <!-- 1 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #01</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Animated Ferris Wheel</h3>
+              <p class="card-folder">./CSS/animated-ferris-wheel/</p>
+              <p class="card-desc">Roda-gigante animada construída com transformações e keyframes em CSS puro.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/animated-ferris-wheel/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #02</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Availability Table</h3>
+              <p class="card-folder">./CSS/availability-table/</p>
+              <p class="card-desc">Tabela de disponibilidade semanal estilizada com variáveis CSS e gradientes.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/availability-table/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #03</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Balance Sheet</h3>
+              <p class="card-folder">./CSS/balance-sheet/</p>
+              <p class="card-desc">Balanço patrimonial financeiro utilizando pseudo-seletores e tabelas acessíveis.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/balance-sheet/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #04</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Blog Post Card</h3>
+              <p class="card-folder">./CSS/blog-post-card/</p>
+              <p class="card-desc">Componente de cartão de postagem de blog com sombras, bordas arredondadas e botão de leitura.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/blog-post-card/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #05</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Book Inventory App</h3>
+              <p class="card-folder">./CSS/book-inventory-app/</p>
+              <p class="card-desc">Interface de inventário de livros estilizada com seletores de atributos CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/book-inventory-app/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #06</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Business Card</h3>
+              <p class="card-folder">./CSS/business-card/</p>
+              <p class="card-desc">Cartão de visitas digital com foto de perfil, informações de contato e links sociais.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/business-card/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #07</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Cafe Menu</h3>
+              <p class="card-folder">./CSS/cafemenu/</p>
+              <p class="card-desc">Cardápio responsivo para cafeteria demonstrando box model e alinhamento tipográfico.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/cafemenu/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #08</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Cat Painting</h3>
+              <p class="card-folder">./CSS/cat-painting/</p>
+              <p class="card-desc">Ilustração de um gato desenhada inteiramente com posicionamento absoluto e formas CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/cat-painting/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #09</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">City Skyline</h3>
+              <p class="card-folder">./CSS/city-skyline/</p>
+              <p class="card-desc">Horizonte urbano responsivo com variáveis CSS, gradientes complexos e media queries.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/city-skyline/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #10</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Colorful Boxes</h3>
+              <p class="card-folder">./CSS/colorful-boxes/</p>
+              <p class="card-desc">Arranjo de caixas coloridas explorando modelos de cores e layout flexível.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/colorful-boxes/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #11</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Color Markers</h3>
+              <p class="card-folder">./CSS/color-markers/</p>
+              <p class="card-desc">Conjunto de canetas marcadoras ilustradas com RGB, Hex, HSL, gradientes e sombras.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/color-markers/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #12</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Conference Form</h3>
+              <p class="card-folder">./CSS/conference-form/</p>
+              <p class="card-desc">Formulário de reunião escolar estilizado com estados de foco e layout moderno.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/conference-form/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 13 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #13</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Confidential Email Page</h3>
+              <p class="card-folder">./CSS/confidential-email-page/</p>
+              <p class="card-desc">Documento de e-mail confidencial com carimbos rotacionados e efeito de texto censurado (blur).</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/confidential-email-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 14 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #14</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Contact Form</h3>
+              <p class="card-folder">./CSS/contact-form/</p>
+              <p class="card-desc">Formulário de contato responsivo com estilização limpa para campos de texto e envio.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/contact-form/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 15 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #15</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Event Flyer Page</h3>
+              <p class="card-folder">./CSS/event-flyer-page/</p>
+              <p class="card-desc">Panfleto digital de festival de música utilizando unidades relativas e divisores estilizados.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/event-flyer-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 16 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #16</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Feature Selection Page</h3>
+              <p class="card-folder">./CSS/feature-selection-page/</p>
+              <p class="card-desc">Painel de seleção de recursos com checkboxes customizados em CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/feature-selection-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 17 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #17</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Flappy Penguin</h3>
+              <p class="card-folder">./CSS/flappy-penguin/</p>
+              <p class="card-desc">Pinguim animado acenando em cenário glacial com transformações e animações CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/flappy-penguin/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 18 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #18</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Flexbox Photo Gallery</h3>
+              <p class="card-folder">./CSS/flexbox-photo-gallery/</p>
+              <p class="card-desc">Galeria de fotos responsiva construída com CSS Flexbox e ajuste proporcional de imagens.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/flexbox-photo-gallery/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 19 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #19</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Game Settings Panel</h3>
+              <p class="card-folder">./CSS/gamesettingspanel/</p>
+              <p class="card-desc">Painel de configurações de jogo com controles interativos e feedback visual.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/gamesettingspanel/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 20 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #20</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Greeting Card</h3>
+              <p class="card-folder">./CSS/greeting-card/</p>
+              <p class="card-desc">Cartão de felicitações interativo utilizando pseudo-classes e transições suaves.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/greeting-card/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 21 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #21</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">House Painting</h3>
+              <p class="card-folder">./CSS/house-painting/</p>
+              <p class="card-desc">Pintura de uma casa completa com telhado, janelas e jardim desenhados com CSS puro.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/house-painting/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 22 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #22</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Job Application</h3>
+              <p class="card-folder">./CSS/job-application/</p>
+              <p class="card-desc">Formulário de candidatura a vaga de emprego com validação visual em CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/job-application/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 23 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #23</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Magazine</h3>
+              <p class="card-folder">./CSS/magazine/</p>
+              <p class="card-desc">Artigo de revista diagramado com CSS Grid, colunas editoriais e citações em destaque.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/magazine/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 24 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #24</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Moon Orbit</h3>
+              <p class="card-folder">./CSS/moon-orbit/</p>
+              <p class="card-desc">Simulação espacial da Lua em órbita ao redor da Terra usando animações CSS contínuas.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/moon-orbit/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 25 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #25</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Newspaper Article</h3>
+              <p class="card-folder">./CSS/newspaper-article/</p>
+              <p class="card-desc">Página do jornal The Daily Chronicle com hierarquia tipográfica clássica.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/newspaper-article/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 26 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #26</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Newspaper Layout</h3>
+              <p class="card-folder">./CSS/newspaper-layout/</p>
+              <p class="card-desc">Diagramação completa de capa de jornal utilizando áreas nomeadas do CSS Grid.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/newspaper-layout/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 27 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #27</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Nutritional Label</h3>
+              <p class="card-folder">./CSS/nutritional-label/</p>
+              <p class="card-desc">Tabela de informação nutricional reproduzida com precisão tipográfica, pesos e divisores CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/nutritional-label/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 28 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #28</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Personal Portfolio</h3>
+              <p class="card-folder">./CSS/personal-portfolio/</p>
+              <p class="card-desc">Projeto certificador de portfólio pessoal com navegação fixa e grade de projetos.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/personal-portfolio/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 29 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #29</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Piano</h3>
+              <p class="card-folder">./CSS/piano/</p>
+              <p class="card-desc">Teclado de piano responsivo construído com pseudo-elementos e media queries.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/piano/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 30 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #30</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Playing Cards</h3>
+              <p class="card-folder">./CSS/playing-cards/</p>
+              <p class="card-desc">Cartas de baralho alinhadas e estilizadas com Flexbox e transformações CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/playing-cards/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 31 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #31</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Pricing Plans</h3>
+              <p class="card-folder">./CSS/pricing-plans/</p>
+              <p class="card-desc">Tabela comparativa de planos de assinatura com cartões destacados e Flexbox.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/pricing-plans/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 32 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #32</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Product Landing Page</h3>
+              <p class="card-folder">./CSS/product-landing-page/</p>
+              <p class="card-desc">Landing page de produto (Orvalho | Coador de cerâmica) com vídeo, recursos e captura de e-mail.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/product-landing-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 33 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #33</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Quiz Webpage</h3>
+              <p class="card-folder">./CSS/quiz-webpage/</p>
+              <p class="card-desc">Questionário de acessibilidade combinando boas práticas de contraste, ARIA e navegação por teclado.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/quiz-webpage/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 34 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #34</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Registration Form</h3>
+              <p class="card-folder">./CSS/registration-form/</p>
+              <p class="card-desc">Formulário de cadastro moderno com estilização de controles de entrada e validação.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/registration-form/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 35 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #35</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Rothko Painting</h3>
+              <p class="card-folder">./CSS/rothko-painting/</p>
+              <p class="card-desc">Pintura abstrata inspirada em Mark Rothko para estudo do Box Model, margens, padding e filtros blur.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/rothko-painting/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 36 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #36</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Set Colored Boxes</h3>
+              <p class="card-folder">./CSS/set-colored-boxes/</p>
+              <p class="card-desc">Grade de blocos coloridos demonstrando aplicação de sistemas de cores em CSS.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/set-colored-boxes/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 37 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #37</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Stylized To-Do List</h3>
+              <p class="card-folder">./CSS/stylized-to-do-list/</p>
+              <p class="card-desc">Lista de tarefas estilizada com links de referência e estados interativos.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/stylized-to-do-list/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 38 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #38</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Technical Documentation Page</h3>
+              <p class="card-folder">./CSS/technical-documentation-page/</p>
+              <p class="card-desc">Página de documentação técnica com barra lateral de navegação responsiva e blocos de código.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/technical-documentation-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 39 -->
+          <article class="project-card card-css">
+            <div class="card-body">
+              <div class="card-top">
+                <span class="card-number">CSS #39</span>
+                <span class="card-tag tag-css">CSS</span>
+              </div>
+              <h3 class="card-title">Tribute Page</h3>
+              <p class="card-folder">./CSS/tribute-page/</p>
+              <p class="card-desc">Página de tributo dedicada a Alan Turing com linha do tempo histórica e layout responsivo.</p>
+            </div>
+            <div class="card-footer">
+              <a href="./CSS/tribute-page/" class="card-link">
+                <span>Abrir projeto</span>
+                <span class="card-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção do Certificado -->
+    <section id="certificado" class="certificate-section" aria-labelledby="title-cert">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-group">
+            <span class="section-badge badge-cert">Conquista Oficial</span>
+            <h2 id="title-cert" class="section-title">Certificado Responsive Web Design</h2>
+            <p class="section-subtitle">
+              Certificação emitida pelo freeCodeCamp após a conclusão de todas as etapas de HTML, CSS e exame certificador.
+            </p>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <div class="certificate-preview">
+            <a href="./medias/certificado.png" target="_blank" rel="noopener" title="Visualizar certificado em alta resolução">
+              <img src="./medias/certificado.png" alt="Certificado oficial Responsive Web Design de Vinicius De Medeiros Ellena" width="900" height="600">
+            </a>
+          </div>
+
+          <div class="certificate-info">
+            <h3>Responsive Web Design Developer Certification</h3>
+            <p>
+              Certificação representando aproximadamente 300 horas de estudo e desenvolvimento prático em HTML5 semântico,
+              acessibilidade, CSS3 moderno, design responsivo e aprovação no exame final do currículo freeCodeCamp.
+            </p>
+
+            <ul class="cert-meta">
+              <li>
+                <strong>Instituição:</strong>
+                <span>freeCodeCamp.org</span>
+              </li>
+              <li>
+                <strong>Curso:</strong>
+                <span>Responsive Web Design</span>
+              </li>
+              <li>
+                <strong>Desenvolvedor:</strong>
+                <span>Vinicius De Medeiros Ellena (lMedeirosl)</span>
+              </li>
+              <li>
+                <strong>Currículo Concluído:</strong>
+                <span>HTML (302/302) &bull; CSS (1234/1234) &bull; Exame Final</span>
+              </li>
+            </ul>
+
+            <div class="cert-actions">
+              <a href="./medias/certificado.png" class="btn btn-primary" target="_blank" rel="noopener">
+                Abrir Certificado (Imagem)
+              </a>
+              <a href="./medias/fcc.png" class="btn btn-secondary" target="_blank" rel="noopener">
+                Ver Progresso do Curso
+              </a>
+              <a href="https://freecodecamp.org/certification/lmedeirosl/responsive-web-design-v9" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                Verificar no freeCodeCamp &#8599;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>
+          <strong>FCC-Responsive-Web-Design-Certification</strong> &mdash; Portfólio de projetos desenvolvido por
+          <a href="https://github.com/lMedeirosl" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); font-weight: 600;">lMedeirosl</a>.
+        </p>
+        <p>Curso Responsive Web Design &bull; Instituição: freeCodeCamp.org</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#html5">HTML5 (24)</a></li>
+        <li><a href="#css">CSS (39)</a></li>
+        <li><a href="./medias/certificado.png" target="_blank" rel="noopener">Certificado</a></li>
+        <li>
+          <a href="https://github.com/lMedeirosl/FCC-Responsive-Web-Design-Certification" target="_blank" rel="noopener noreferrer">
+            Repositório no GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
